@@ -1,3 +1,4 @@
+import { RastreadorModule } from './rastreador/rastreador.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    RastreadorModule,
+  ],
+  exports: [
+    RastreadorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
