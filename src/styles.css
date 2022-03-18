@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
+/** Tamplate menu side bar lateral */
+
 .menu__lateral{
   width: 30vh;
   height: 100vh;
@@ -189,3 +191,5 @@ body {
         padding-left: calc(var(--nav-width) + 188px)
     }
 }
+
+/** Tamplate menu side bar lateral */
