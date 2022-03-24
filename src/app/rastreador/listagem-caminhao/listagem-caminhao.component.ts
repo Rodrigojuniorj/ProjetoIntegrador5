@@ -1,10 +1,8 @@
 import { Fabricante } from './../model/fabricante';
 import { Caminhao } from './../model/caminhao';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { AngularFireList } from '@angular/fire/compat/database';
-import { map } from 'rxjs';
-import { observable } from 'rxjs';
+import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
+import { observable, map } from 'rxjs';
 
 
 @Component({
