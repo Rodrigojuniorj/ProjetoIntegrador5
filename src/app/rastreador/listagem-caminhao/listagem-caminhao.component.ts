@@ -10,6 +10,7 @@ import { observable, map } from 'rxjs';
   templateUrl: './listagem-caminhao.component.html',
   styleUrls: ['./listagem-caminhao.component.css']
 })
+
 export class ListagemCaminhaoComponent implements OnInit {
   listaCaminhao: Caminhao[] = []
   listaFabricante: any;
@@ -23,11 +24,12 @@ export class ListagemCaminhaoComponent implements OnInit {
   ngOnInit(): void {
     this.iniciarArrayFabricante();
     this.iniciarArrayCaminhao();
+    this.iniciarArrayTarefas();
   }
 
   iniciarArrayCaminhao(): void {
     this.listaCaminhao = [
-      new Caminhao(1, 'CM Constellation 17.190 ', '1949', 'BYX1241', 'AWW66914', 'REOAMN20', this.listaFabricante[0]),
+      new Caminhao('CM Constellation 17.190 ', '1949', 'BYX1241', 'AWW66914', 'REOAMN20', this.listaFabricante[0]),
     ]
   }
 
@@ -40,12 +42,10 @@ export class ListagemCaminhaoComponent implements OnInit {
   }
 
   iniciarArrayTarefas(): void {
-
     this.referenceTableFabricantes.snapshotChanges().pipe(
       map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
     ).subscribe(data => {
       this.listaFabricante = data;
     });
   }
-
 }

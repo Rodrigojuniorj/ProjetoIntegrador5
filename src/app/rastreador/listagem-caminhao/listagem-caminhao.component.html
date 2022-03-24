@@ -13,27 +13,15 @@
           <th class="text-center"> </th>
         </tr>
 
-        <tr *ngFor="let caminhao of listaCaminhao">
+        <tr *ngFor="let caminhao of listaFabricante">
+          <td>
+            {{caminhao.descricao}}
+          </td>
           <td>
             {{caminhao.id}}
           </td>
           <td>
-            {{caminhao.modelo}}
-          </td>
-          <td>
-            {{caminhao.anoFabricacao}}
-          </td>
-          <td>
-            {{caminhao.placa}}
-          </td>
-          <td>
-            {{caminhao.chassi}}
-          </td>
-          <td>
-            {{caminhao.renavam}}
-          </td>
-          <td>
-            {{caminhao.marca.marca}}
+            {{caminhao.status}}
           </td>
           <td>
             <button class="botaoestilizado">Alterar</button>
