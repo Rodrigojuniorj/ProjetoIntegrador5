@@ -156,7 +156,9 @@ body {
     background-color: var(--white-color)
 }
 
-
+.conteudo{
+  max-width: 1280px;
+}
 
 @media screen and (min-width: 768px) {
     body {
