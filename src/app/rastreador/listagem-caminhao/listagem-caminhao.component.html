@@ -4,24 +4,35 @@
       <button class="btn btn-sm btn-success">Novo</button>
     </div>
     <div class="col-md-12" style="margin-top: 20px">
-      <table class="table table-striped table-bordered table-hover">
+      <table class="table table-striped">
         <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Email</th>
-          <th>Senha</th>
+          <th>Modelo</th>
+          <th>Chassi</th>
+          <th>Marca</th>
+          <th>Ano de Fabricação</th>
+          <th>Placa</th>
+          <th>Renavam</th>
           <th class="text-center"> </th>
         </tr>
 
-        <tr *ngFor="let caminhao of listaFabricante">
+        <tr *ngFor="let caminhao of listaCaminhao">
           <td>
-            {{caminhao.descricao}}
+            {{caminhao.modelo}}
           </td>
           <td>
-            {{caminhao.id}}
+            {{caminhao.chassi}}
           </td>
           <td>
-            {{caminhao.status}}
+            {{caminhao.marca.marca}}
+          </td>
+          <td>
+            {{caminhao.anoFabricacao}}
+          </td>
+          <td>
+            {{caminhao.placa}}
+          </td>
+          <td>
+            {{caminhao.renavam}}
           </td>
           <td>
             <button class="botaoestilizado">Alterar</button>

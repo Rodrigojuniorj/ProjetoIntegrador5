@@ -12,25 +12,18 @@ import { observable, map } from 'rxjs';
 })
 
 export class ListagemCaminhaoComponent implements OnInit {
-  listaCaminhao: Caminhao[] = []
   listaFabricante: any;
-  referenceTableFabricantes: AngularFireList<Fabricante>;
+  listaCaminhao: any;
+  referenceTableCaminhao: AngularFireList<Fabricante>;
 
 
   constructor(private banco: AngularFireDatabase) {
-    this.referenceTableFabricantes = banco.list('/tarefas');
+    this.referenceTableCaminhao = banco.list('/caminhao');
   }
 
   ngOnInit(): void {
     this.iniciarArrayFabricante();
-    this.iniciarArrayCaminhao();
     this.iniciarArrayTarefas();
-  }
-
-  iniciarArrayCaminhao(): void {
-    this.listaCaminhao = [
-      new Caminhao('CM Constellation 17.190 ', '1949', 'BYX1241', 'AWW66914', 'REOAMN20', this.listaFabricante[0]),
-    ]
   }
 
   iniciarArrayFabricante(): void {
@@ -42,10 +35,10 @@ export class ListagemCaminhaoComponent implements OnInit {
   }
 
   iniciarArrayTarefas(): void {
-    this.referenceTableFabricantes.snapshotChanges().pipe(
+    this.referenceTableCaminhao.snapshotChanges().pipe(
       map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
     ).subscribe(data => {
-      this.listaFabricante = data;
+      this.listaCaminhao = data;
     });
   }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListagemCaminhaoComponent } from './listagem-caminhao/listagem-caminhao.component';
 import { NovoCaminhaoComponent } from './novo-caminhao/novo-caminhao.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,11 +12,13 @@ import { NovoCaminhaoComponent } from './novo-caminhao/novo-caminhao.component';
     NovoCaminhaoComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ListagemCaminhaoComponent,
-    NovoCaminhaoComponent
+    NovoCaminhaoComponent,
   ]
 })
 export class RastreadorModule { }
