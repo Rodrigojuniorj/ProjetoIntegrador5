@@ -14,7 +14,7 @@ import { observable, map } from 'rxjs';
 export class ListagemCaminhaoComponent implements OnInit {
   listaFabricante: any;
   listaCaminhao: any;
-  referenceTableCaminhao: AngularFireList<Fabricante>;
+  referenceTableCaminhao: AngularFireList<Caminhao>;
 
 
   constructor(private banco: AngularFireDatabase) {
@@ -33,7 +33,10 @@ export class ListagemCaminhaoComponent implements OnInit {
       new Fabricante(3, 'Volvo'),
     ]
   }
-
+  excluirCaminhao(caminhao: any): void {
+    //console.log(caminhao);
+   this.banco.object('/caminhao/' + caminhao.key).remove();
+  }
   iniciarArrayTarefas(): void {
     this.referenceTableCaminhao.snapshotChanges().pipe(
       map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
