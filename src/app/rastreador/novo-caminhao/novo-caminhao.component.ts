@@ -22,6 +22,8 @@ export class NovoCaminhaoComponent implements OnInit {
     this.caminhao = new Caminhao("","","","","",this.fabricante);
   }
 
+
+
   incluirTarefa():void{
     this.banco.list('caminhao').push(this.caminhao)
     .then((resultado:any) => {

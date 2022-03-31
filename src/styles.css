@@ -190,7 +190,8 @@ body {
     }
 
     .body-pd {
-        padding-left: calc(var(--nav-width) + 188px)
+        padding-top: 20px;
+        padding-left: calc(var(--nav-width) + 120px)
     }
 }
 
