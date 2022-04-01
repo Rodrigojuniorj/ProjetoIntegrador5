@@ -1,6 +1,6 @@
 <br>
   <h2>Cadastrar</h2>
-  <form #cadastro="ngForm" (submit)="incluirTarefa()">
+  <form #cadastro="ngForm" (submit)="incluirCaminhao()">
       <div>
           <label for="modelo">Modelo do Caminhão:</label><br>
           <input type="text" id="modelo" name="modelo" [(ngModel)]="caminhao.modelo" required class="form-control">  <br>
@@ -13,9 +13,15 @@
           <label for="renavam">Renavam:</label><br>
           <input type="text" id="renavam" name="renavam" [(ngModel)]="caminhao.renavam" required class="form-control"> <br>
           <label for="marca">Marca:</label><br>
-          <input type="text" id="marca" name="marca" [(ngModel)]="caminhao.marca.marca"  class="form-control"> <br>
+          <select class="form-control" name="marca" id="marca">
+            <option *ngFor="let fabricante of listaFabricante" value= {{fabricante.marca}}>
+              {{fabricante.marca}}
+            </option>
+          </select>
       </div>
-      <button type="submit" class="btn btn-primary form-control" >Incluir</button>
+      <div class="col-md-12" style="margin-top: 30px;">
+        <button type="submit" class="btn btn-primary form-control" >Incluir</button>
+      </div>
   </form>
 <br>
 

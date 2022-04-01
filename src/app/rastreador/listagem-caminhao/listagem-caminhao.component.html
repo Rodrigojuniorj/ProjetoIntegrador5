@@ -2,47 +2,57 @@
 <div class="container-fluid">
   <div class="col-md-12">
     <button class="form-contol btn btn-primary">Cadastrar nova marca</button>
+    <a href="/cadastrarmarca" class="btn btn-primary">Cadastrar nova marca</a>
   </div>
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <app-novo-caminhao></app-novo-caminhao>
     </div>
-    <div class="col-md-7" style="margin-top: 20px">
+    <div class="col-md-8" style="margin-top: 20px">
       <table class="table table-striped">
-        <tr>
-          <th>Modelo</th>
-          <th>Chassi</th>
-          <th>Marca</th>
-          <th>Ano de Fabricação</th>
-          <th>Placa</th>
-          <th>Renavam</th>
-          <th class="text-center"> </th>
-        </tr>
-
-        <tr *ngFor="let caminhao of listaCaminhao">
-          <td>
-            {{caminhao.modelo}}
-          </td>
-          <td>
-            {{caminhao.chassi}}
-          </td>
-          <td>
-            {{caminhao.marca.marca}}
-          </td>
-          <td>
-            {{caminhao.anoFabricacao}}
-          </td>
-          <td>
-            {{caminhao.placa}}
-          </td>
-          <td>
-            {{caminhao.renavam}}
-          </td>
-          <td>
-            <button class="botaoestilizado">Alterar</button>
-            <button class="btn btn-sm btn-danger" (click)="excluirCaminhao(caminhao)">Remover</button>
-          </td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Chassi</th>
+            <th>Marca</th>
+            <th>Ano de Fabricação</th>
+            <th>Placa</th>
+            <th>Renavam</th>
+            <th class="text-center"> </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let caminhao of listaCaminhao">
+              <td>
+                {{caminhao.modelo}}
+              </td>
+              <td>
+                {{caminhao.chassi}}
+              </td>
+              <td>
+                {{caminhao.marca.marca}}
+              </td>
+              <td>
+                {{caminhao.anoFabricacao}}
+              </td>
+              <td>
+                {{caminhao.placa}}
+              </td>
+              <td>
+                {{caminhao.renavam}}
+              </td>
+              <td>
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-sm btn-success">Alterar</button>
+                  </div>
+                  <div class="col-md-4" style="margin-left: 15px;">
+                    <button class="btn btn-sm btn-danger">Remover</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+        </tbody>
       </table>
     </div>
   </div>

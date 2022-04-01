@@ -15,24 +15,19 @@ export class ListagemCaminhaoComponent implements OnInit {
   listaFabricante: any;
   listaCaminhao: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
+  referenceTableMarca: AngularFireList<Fabricante>;
 
 
   constructor(private banco: AngularFireDatabase) {
     this.referenceTableCaminhao = banco.list('/caminhao');
+    this.referenceTableMarca = banco.list('/fabricante');
   }
 
   ngOnInit(): void {
-    this.iniciarArrayFabricante();
     this.iniciarArrayTarefas();
   }
 
-  iniciarArrayFabricante(): void {
-    this.listaFabricante = [
-      new Fabricante(1, 'Volkswagen'),
-      new Fabricante(2, 'Mercedes Benz'),
-      new Fabricante(3, 'Volvo'),
-    ]
-  }
+
   excluirCaminhao(caminhao: any): void {
     //console.log(caminhao);
    this.banco.object('/caminhao/' + caminhao.key).remove();
