@@ -27,6 +27,8 @@ export class NovoCaminhaoComponent implements OnInit {
     this.caminhao = new Caminhao("","","","","",this.fabricante);
   }
 
+
+
   iniciarArrayFabricante(): void {
     this.referenceTableMarca.snapshotChanges().pipe(
       map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))

@@ -1,6 +1,6 @@
 <br>
   <h2>Cadastrar</h2>
-  <form #cadastro="ngForm" (submit)="incluirCaminhao()">
+  <form #cadastro="ngForm" name="zeraCampos" (submit)="incluirCaminhao()">
       <div>
           <label for="modelo">Modelo do Caminhão:</label><br>
           <input type="text" id="modelo" name="modelo" [(ngModel)]="caminhao.modelo" required class="form-control">  <br>

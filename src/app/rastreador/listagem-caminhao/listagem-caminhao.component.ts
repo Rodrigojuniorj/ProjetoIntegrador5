@@ -29,7 +29,7 @@ export class ListagemCaminhaoComponent implements OnInit {
 
 
   excluirCaminhao(caminhao: any): void {
-    //console.log(caminhao);
+    console.log(caminhao);
    this.banco.object('/caminhao/' + caminhao.key).remove();
   }
   iniciarArrayTarefas(): void {
