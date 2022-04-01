@@ -4,6 +4,7 @@ import { ListagemCaminhaoComponent } from './listagem-caminhao/listagem-caminhao
 import { NovoCaminhaoComponent } from './novo-caminhao/novo-caminhao.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NovaMarcaComponent } from './nova-marca/nova-marca.component';
+import { ListarMarcaComponent } from './listar-marca/listar-marca.component';
 
 
 
@@ -12,6 +13,7 @@ import { NovaMarcaComponent } from './nova-marca/nova-marca.component';
     ListagemCaminhaoComponent,
     NovoCaminhaoComponent,
     NovaMarcaComponent,
+    ListarMarcaComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { NovaMarcaComponent } from './nova-marca/nova-marca.component';
   exports: [
     ListagemCaminhaoComponent,
     NovoCaminhaoComponent,
-    NovaMarcaComponent
+    NovaMarcaComponent,
+    ListarMarcaComponent
   ]
 })
 export class RastreadorModule { }

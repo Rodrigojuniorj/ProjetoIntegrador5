@@ -1,14 +1,14 @@
-  <div class="col-md-12">
-    <a href="/listagemcaminhao" class="btn btn-primary">Cadastrar nova Caminhao</a>
-  </div>
-  <br>
-  <h2>Cadastrar Marca</h2>
-  <form #cadastro="ngForm" (submit)="incluirMarca()">
-      <div>
-          <label for="marca">Marca:</label><br>
-          <input type="text" id="marca" name="marca" [(ngModel)]="fabricante.marca" required class="form-control">  <br>
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 20px;">
+        <h2>Cadastrar Marca</h2>
+        <form #cadastro="ngForm" (submit)="incluirMarca()">
+            <div>
+                <label for="marca">Marca:</label><br>
+                <input type="text" id="marca" name="marca" [(ngModel)]="fabricante.marca" required class="form-control">  <br>
+            </div>
+            <button type="submit" class="btn btn-primary form-control" >Incluir</button>
+        </form>
+
       </div>
-      <button type="submit" class="btn btn-primary form-control" >Incluir</button>
-  </form>
-<br>
+    </div>
 

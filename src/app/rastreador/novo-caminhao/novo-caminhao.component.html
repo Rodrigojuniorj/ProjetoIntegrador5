@@ -13,8 +13,8 @@
           <label for="renavam">Renavam:</label><br>
           <input type="text" id="renavam" name="renavam" [(ngModel)]="caminhao.renavam" required class="form-control"> <br>
           <label for="marca">Marca:</label><br>
-          <select class="form-control" name="marca" id="marca">
-            <option *ngFor="let fabricante of listaFabricante" value= {{fabricante.marca}}>
+          <select [(ngModel)]="caminhao.marca.marca"  class="form-control" name="marca" id="marca">
+            <option  *ngFor="let fabricante of listaFabricante" value= {{fabricante.marca}} >
               {{fabricante.marca}}
             </option>
           </select>

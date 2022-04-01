@@ -1,44 +1,24 @@
 
 <div class="container-fluid">
   <div class="col-md-12">
-    <a href="/listarmarca" class="btn btn-primary">Cadastrar nova marca</a>
+    <a href="/listagemcaminhao" class="btn btn-primary">Cadastrar Novo Caminhão</a>
   </div>
   <div class="row">
     <div class="col-md-4">
-      <app-novo-caminhao></app-novo-caminhao>
+      <app-nova-marca></app-nova-marca>
     </div>
     <div class="col-md-8" style="margin-top: 20px">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Modelo</th>
-            <th>Chassi</th>
             <th>Marca</th>
-            <th>Ano de Fabricação</th>
-            <th>Placa</th>
-            <th>Renavam</th>
             <th class="text-center"> </th>
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let caminhao of listaCaminhao">
+            <tr *ngFor="let fabricante of listaFabricante">
               <td>
-                {{caminhao.modelo}}
-              </td>
-              <td>
-                {{caminhao.chassi}}
-              </td>
-              <td>
-                {{caminhao.marca.marca}}
-              </td>
-              <td>
-                {{caminhao.anoFabricacao}}
-              </td>
-              <td>
-                {{caminhao.placa}}
-              </td>
-              <td>
-                {{caminhao.renavam}}
+                {{fabricante.marca}}
               </td>
               <td>
                 <div class="row">
