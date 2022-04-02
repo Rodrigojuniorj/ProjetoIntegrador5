@@ -1,14 +1,30 @@
-    <div class="row">
-      <div class="col-md-12" style="margin-top: 20px;">
-        <h2>Cadastrar Marca</h2>
-        <form #cadastro="ngForm" (submit)="incluirMarca()">
-            <div>
-                <label for="marca">Marca:</label><br>
-                <input type="text" id="marca" name="marca" [(ngModel)]="fabricante.marca" required class="form-control">  <br>
-            </div>
-            <button type="submit" class="btn btn-primary form-control" >Incluir</button>
-        </form>
 
-      </div>
+<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+<main>
+  <section class="container">  
+    <!-- register -->
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <strong>Criar Marca</strong>
+      <form #cadastro="ngForm" (submit)="incluirMarca()">
+        <fieldset>
+          <div class="form">
+            <div class="form-row">
+              <i class="fas fa-user"></i>
+              <label class="form-label" for="input" >Marca:</label>
+              <input type="text" class="form-text" id="marca" name="marca" [(ngModel)]="fabricante.marca" required class="form-control" placeholder="Digite a marca">
+            </div>            
+           
+            <div class="form-row button-login">
+              <button class="btn btn-login">Criar<i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </fieldset>
+      </form>      
     </div>
+  </section>
+</main>
+
+   
+
 
