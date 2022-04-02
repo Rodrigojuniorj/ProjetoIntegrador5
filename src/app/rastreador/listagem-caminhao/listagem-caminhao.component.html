@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
   <div class="col-md-12">
     <a href="/listarmarca" class="btn btn-primary">Cadastrar nova marca</a>
@@ -21,39 +20,38 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let caminhao of listaCaminhao">
-              <td>
-                {{caminhao.modelo}}
-              </td>
-              <td>
-                {{caminhao.chassi}}
-              </td>
-              <td>
-                {{caminhao.marca.marca}}
-              </td>
-              <td>
-                {{caminhao.anoFabricacao}}
-              </td>
-              <td>
-                {{caminhao.placa}}
-              </td>
-              <td>
-                {{caminhao.renavam}}
-              </td>
-              <td>
-                <div class="row">
-                  <div class="col-md-4">
-                    <button class="btn btn-sm btn-success">Alterar</button>
-                  </div>
-                  <div class="col-md-4" style="margin-left: 15px;">
-                    <button class="btn btn-sm btn-danger" >Remover</button>
-                  </div>
+          <tr *ngFor="let caminhao of listaCaminhao">
+            <td>
+              {{caminhao.modelo}}
+            </td>
+            <td>
+              {{caminhao.chassi}}
+            </td>
+            <td>
+              {{caminhao.marca.marca}}
+            </td>
+            <td>
+              {{caminhao.anoFabricacao}}
+            </td>
+            <td>
+              {{caminhao.placa}}
+            </td>
+            <td>
+              {{caminhao.renavam}}
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-md-4">
+                  <button class="btn btn-sm btn-success">Alterar</button>
                 </div>
-              </td>
-            </tr>
+                <div class="col-md-4" style="margin-left: 15px;">
+                  <button class="btn btn-sm btn-danger" (click)="excluirCaminhao(caminhao)">Remover</button>
+                </div>
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
