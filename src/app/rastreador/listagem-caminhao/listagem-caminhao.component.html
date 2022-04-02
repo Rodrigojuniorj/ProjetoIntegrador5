@@ -4,9 +4,9 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <app-novo-caminhao></app-novo-caminhao>
+      <app-novo-caminhao [caminhao]="caminhao" [acao]="acao"></app-novo-caminhao>
     </div>
-    <div class="col-md-8" style="margin-top: 20px">
+    <div class=" col-md-8" style="margin-top: 20px">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -20,32 +20,32 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let caminhao of listaCaminhao">
+          <tr *ngFor="let veiculo of listaCaminhao">
             <td>
-              {{caminhao.modelo}}
+              {{veiculo.modelo}}
             </td>
             <td>
-              {{caminhao.chassi}}
+              {{veiculo.chassi}}
             </td>
             <td>
-              {{caminhao.marca.marca}}
+              {{veiculo.marca.marca}}
             </td>
             <td>
-              {{caminhao.anoFabricacao}}
+              {{veiculo.anoFabricacao}}
             </td>
             <td>
-              {{caminhao.placa}}
+              {{veiculo.placa}}
             </td>
             <td>
-              {{caminhao.renavam}}
+              {{veiculo.renavam}}
             </td>
             <td>
               <div class="row">
                 <div class="col-md-4">
-                  <button class="btn btn-sm btn-success">Alterar</button>
+                  <button class="btn btn-sm btn-success" (click)="editarCaminhao(veiculo)">Alterar</button>
                 </div>
                 <div class="col-md-4" style="margin-left: 15px;">
-                  <button class="btn btn-sm btn-danger" (click)="excluirCaminhao(caminhao)">Remover</button>
+                  <button class="btn btn-sm btn-danger" (click)="excluirCaminhao(veiculo)">Remover</button>
                 </div>
               </div>
             </td>
