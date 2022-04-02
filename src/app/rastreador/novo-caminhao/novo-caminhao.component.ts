@@ -1,6 +1,6 @@
 import { Fabricante } from './../model/fabricante';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Caminhao } from '../model/caminhao';
 import { observable, map } from 'rxjs';
 
@@ -10,8 +10,11 @@ import { observable, map } from 'rxjs';
   styleUrls: ['./novo-caminhao.component.css']
 })
 export class NovoCaminhaoComponent implements OnInit {
-  caminhao:any;
-  fabricante:any;
+  @Input()
+  caminhao: any;
+  @Input()
+  acao = "Incluir";
+  fabricante: any;
   listaFabricante: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
   referenceTableMarca: AngularFireList<Fabricante>;
@@ -23,8 +26,8 @@ export class NovoCaminhaoComponent implements OnInit {
 
   ngOnInit(): void {
     this.iniciarArrayFabricante();
-    this.fabricante = new Fabricante('')
-    this.caminhao = new Caminhao("","","","","",this.fabricante);
+    this.fabricante = new Fabricante('');
+    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
   }
 
 
@@ -37,11 +40,19 @@ export class NovoCaminhaoComponent implements OnInit {
     });
   }
 
-  incluirCaminhao():void{
-    this.banco.list('caminhao').push(this.caminhao)
-    .then((resultado:any) => {
-        console.log(resultado.key);
-    })
+  incluirCaminhao(): void {
+    if (this.acao == "Incluir") {
+      this.banco.list('caminhao').push(this.caminhao)
+        .then((resultado: any) => {
+          console.log(resultado.key);
+        })
+        this.fabricante = new Fabricante('');
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
+    } else {
+      this.banco.object('/caminhao/' + this.caminhao.key).update(this.caminhao)
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
+      this.fabricante = new Fabricante('');
+      this.acao = "Incluir";
+    }
   }
-
 }

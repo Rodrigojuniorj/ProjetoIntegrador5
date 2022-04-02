@@ -1,6 +1,6 @@
 import { Fabricante } from './../model/fabricante';
 import { Caminhao } from './../model/caminhao';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { observable, map } from 'rxjs';
 
@@ -12,6 +12,8 @@ import { observable, map } from 'rxjs';
 })
 
 export class ListagemCaminhaoComponent implements OnInit {
+  caminhao: any;
+  acao: string = "Incluir";
   listaFabricante: any;
   listaCaminhao: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
@@ -27,10 +29,13 @@ export class ListagemCaminhaoComponent implements OnInit {
     this.iniciarArrayTarefas();
   }
 
+  editarCaminhao(caminhao: any) {
+    this.caminhao = Object.assign({}, caminhao);
+    this.acao = "Atualizar";
+  }
 
-  excluirCaminhao(caminhao: any): void {
-    console.log(caminhao);
-   this.banco.object('/caminhao/' + caminhao.key).remove();
+  excluirCaminhao(caminhones: any): void {
+    this.banco.object('/caminhao/' + caminhones.key).remove();
   }
   iniciarArrayTarefas(): void {
     this.referenceTableCaminhao.snapshotChanges().pipe(
@@ -39,4 +44,5 @@ export class ListagemCaminhaoComponent implements OnInit {
       this.listaCaminhao = data;
     });
   }
+
 }
