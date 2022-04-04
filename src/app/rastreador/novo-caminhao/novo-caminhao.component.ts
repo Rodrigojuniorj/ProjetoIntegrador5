@@ -46,7 +46,6 @@ export class NovoCaminhaoComponent implements OnInit {
         })
         this.fabricante = new Fabricante('');
       this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
-      this.acao = "Atualizar"
     } else {
       this.banco.object('/caminhao/' + this.caminhao.key).update(this.caminhao)
       this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);

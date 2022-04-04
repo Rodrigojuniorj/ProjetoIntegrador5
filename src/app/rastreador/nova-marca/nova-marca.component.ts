@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Fabricante } from './../model/fabricante';
 import { Caminhao } from '../model/caminhao';
@@ -9,8 +9,11 @@ import { Caminhao } from '../model/caminhao';
   styleUrls: ['./nova-marca.component.css']
 })
 export class NovaMarcaComponent implements OnInit {
+  @Input()
+  fabricante: any;
+  @Input()
+  acao = "Incluir";
   caminhao:any;
-  fabricante:any;
   referenceTableFabricante: AngularFireList<Fabricante>;
 
   constructor(private banco: AngularFireDatabase) {
@@ -22,10 +25,17 @@ export class NovaMarcaComponent implements OnInit {
   }
 
   incluirMarca():void{
-    this.banco.list('fabricante').push(this.fabricante)
-    .then((resultado:any) => {
-        console.log(resultado.key);
-    })
+    if (this.acao == "Incluir") {
+      this.banco.list('fabricante').push(this.fabricante)
+      .then((resultado:any) => {
+          console.log(resultado.key);
+      })
+      this.fabricante = new Fabricante('');
+    }else{
+      this.banco.object('/fabricante/' + this.fabricante.key).update(this.fabricante)
+      this.fabricante = new Fabricante('');
+      this.acao = "Incluir";
+    }
   }
 
 }

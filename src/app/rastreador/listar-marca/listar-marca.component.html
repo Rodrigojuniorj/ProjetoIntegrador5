@@ -5,7 +5,7 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <app-nova-marca></app-nova-marca>
+      <app-nova-marca [fabricante]="fabricante" [acao]="acao"></app-nova-marca>
     </div>
     <div class="col-md-8" style="margin-top: 20px">
       <table class="table table-striped">
@@ -23,10 +23,10 @@
               <td>
                 <div class="row">
                   <div class="col-md-4">
-                    <button class="btn btn-sm btn-success">Alterar</button>
+                    <button class="btn btn-sm btn-success" (click)="editarMarca(fabricante)">Alterar</button>
                   </div>
                   <div class="col-md-4" style="margin-left: 15px;">
-                    <button class="btn btn-sm btn-danger">Remover</button>
+                    <button class="btn btn-sm btn-danger" (click)="excluirFabricante(fabricante)">Remover</button>
                   </div>
                 </div>
               </td>
