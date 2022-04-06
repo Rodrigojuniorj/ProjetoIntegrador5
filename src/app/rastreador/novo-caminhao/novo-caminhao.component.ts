@@ -39,12 +39,12 @@ export class NovoCaminhaoComponent implements OnInit {
   }
 
   incluirCaminhao(): void {
-    if (this.acao == "Incluir") {
+    if (!this.caminhao.key){
       this.banco.list('caminhao').push(this.caminhao)
         .then((resultado: any) => {
           console.log(resultado.key);
         })
-        this.fabricante = new Fabricante('');
+      this.fabricante = new Fabricante('');
       this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
     } else {
       this.banco.object('/caminhao/' + this.caminhao.key).update(this.caminhao)
@@ -52,5 +52,6 @@ export class NovoCaminhaoComponent implements OnInit {
       this.fabricante = new Fabricante('');
       this.acao = "Incluir";
     }
+    //console.log(this.caminhao.key);
   }
 }
