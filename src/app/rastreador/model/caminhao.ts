@@ -7,10 +7,11 @@ export class Caminhao {
     public placa: String,
     public chassi: String,
     public renavam: String,
-    public marca: Fabricante) {
+    public marca: Fabricante,
+    public coordenada: any) {
   }
 
   public criarCaminhao(caminhao:Caminhao) {
-      return '{ "modelo": ' + caminhao.modelo + ',"anoFabricacao"' + caminhao.anoFabricacao + ',"placa":' + caminhao.placa + ',"chassi":' + caminhao.chassi + ',"renavam":' + caminhao.renavam + ',"marca":' + caminhao.marca + ' }'
+      return '{ "modelo": ' + caminhao.modelo + ',"anoFabricacao"' + caminhao.anoFabricacao + ',"placa":' + caminhao.placa + ',"chassi":' + caminhao.chassi + ',"renavam":' + caminhao.renavam + ',"marca":' + caminhao.marca + ', "coordenada":'+ caminhao.coordenada +' }'
   }
 }

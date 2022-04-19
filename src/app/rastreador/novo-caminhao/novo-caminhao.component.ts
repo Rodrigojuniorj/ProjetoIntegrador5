@@ -13,7 +13,6 @@ export class NovoCaminhaoComponent implements OnInit {
   @Input()
   caminhao: any;
   @Input()
-  acao = "Incluir";
   fabricante: any;
   listaFabricante: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
@@ -27,7 +26,7 @@ export class NovoCaminhaoComponent implements OnInit {
   ngOnInit(): void {
     this.iniciarArrayFabricante();
     this.fabricante = new Fabricante('');
-    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
+    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
   }
 
   iniciarArrayFabricante(): void {
@@ -45,12 +44,11 @@ export class NovoCaminhaoComponent implements OnInit {
           console.log(resultado.key);
         })
       this.fabricante = new Fabricante('');
-      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
     } else {
       this.banco.object('/caminhao/' + this.caminhao.key).update(this.caminhao)
-      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante);
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
       this.fabricante = new Fabricante('');
-      this.acao = "Incluir";
     }
     //console.log(this.caminhao.key);
   }

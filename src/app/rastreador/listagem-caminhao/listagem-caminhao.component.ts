@@ -13,7 +13,6 @@ import { observable, map } from 'rxjs';
 
 export class ListagemCaminhaoComponent implements OnInit {
   caminhao: any;
-  acao: string = "Incluir";
   listaFabricante: any;
   listaCaminhao: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
@@ -31,7 +30,6 @@ export class ListagemCaminhaoComponent implements OnInit {
 
   editarCaminhao(caminhao: any) {
     this.caminhao = Object.assign({}, caminhao);
-    this.acao = "Atualizar";
   }
 
   excluirCaminhao(caminhones: any): void {

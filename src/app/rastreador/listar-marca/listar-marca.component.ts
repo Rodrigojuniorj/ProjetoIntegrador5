@@ -1,5 +1,4 @@
 import { Fabricante } from './../model/fabricante';
-import { Caminhao } from './../model/caminhao';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { observable, map } from 'rxjs';
@@ -14,7 +13,6 @@ export class ListarMarcaComponent implements OnInit {
   listaFabricante: any;
   fabricante: any;
   referenceTableMarca: AngularFireList<Fabricante>;
-  acao: string = "Incluir";
 
   constructor(private banco: AngularFireDatabase) {
     this.referenceTableMarca = banco.list('/fabricante');
@@ -27,7 +25,6 @@ export class ListarMarcaComponent implements OnInit {
 
   editarMarca(fabricante: any) {
     this.fabricante = Object.assign({}, fabricante);
-    this.acao = "Atualizar";
   }
 
   excluirFabricante(fabricantes: any): void {

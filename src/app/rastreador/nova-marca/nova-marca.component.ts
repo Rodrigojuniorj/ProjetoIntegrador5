@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Fabricante } from './../model/fabricante';
-import { Caminhao } from '../model/caminhao';
 
 @Component({
   selector: 'app-nova-marca',
@@ -12,7 +11,6 @@ export class NovaMarcaComponent implements OnInit {
   @Input()
   fabricante: any;
   @Input()
-  acao = "Incluir";
   caminhao:any;
   referenceTableFabricante: AngularFireList<Fabricante>;
 
@@ -25,7 +23,7 @@ export class NovaMarcaComponent implements OnInit {
   }
 
   incluirMarca():void{
-    if (this.acao == "Incluir") {
+    if (!this.fabricante.key) {
       this.banco.list('fabricante').push(this.fabricante)
       .then((resultado:any) => {
           console.log(resultado.key);
@@ -34,7 +32,6 @@ export class NovaMarcaComponent implements OnInit {
     }else{
       this.banco.object('/fabricante/' + this.fabricante.key).update(this.fabricante)
       this.fabricante = new Fabricante('');
-      this.acao = "Incluir";
     }
   }
 

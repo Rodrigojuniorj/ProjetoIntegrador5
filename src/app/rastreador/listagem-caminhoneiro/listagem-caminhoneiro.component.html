@@ -1,32 +1,37 @@
 
 <div class="container-fluid">
-  <div class="col-md-12">
-    <a href="/listagemcaminhao" class="btn btn-primary">Cadastrar Novo Caminhão</a>
-  </div>
   <div class="row">
     <div class="col-md-4">
-      <app-nova-marca [fabricante]="fabricante"></app-nova-marca>
+      <app-novo-caminhoneiro [caminhoneiro]="caminhoneiro"></app-novo-caminhoneiro>
     </div>
     <div class="col-md-8" style="margin-top: 20px">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Marca</th>
+            <th>CPF</th>
+            <th>NOME</th>
+            <th>CELULAR</th>
             <th class="text-center"> </th>
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let fabricante of listaFabricante">
+            <tr *ngFor="let caminhoneiro of listaCaminhoneiro">
               <td>
-                {{fabricante.marca}}
+                {{caminhoneiro.cpf}}
+              </td>
+              <td>
+                {{caminhoneiro.nome}}
+              </td>
+              <td>
+                {{caminhoneiro.celular}}
               </td>
               <td>
                 <div class="row">
                   <div class="col-md-4">
-                    <button class="btn btn-sm btn-success" (click)="editarMarca(fabricante)">Alterar</button>
+                    <button class="btn btn-sm btn-success" (click)="editarCaminhoneiro(caminhoneiro)">Alterar</button>
                   </div>
                   <div class="col-md-4" style="margin-left: 15px;">
-                    <button class="btn btn-sm btn-danger" (click)="excluirFabricante(fabricante)">Remover</button>
+                    <button class="btn btn-sm btn-danger" (click)="excluirCaminhoneiro(caminhoneiro)">Remover</button>
                   </div>
                 </div>
               </td>

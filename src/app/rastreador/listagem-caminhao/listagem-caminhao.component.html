@@ -1,10 +1,10 @@
 <div class="container-fluid">
-  <div class="col-md-12">
-    <a href="/listarmarca" class="btn btn-primary">Cadastrar nova marca</a>
-  </div>
-  <div class="row">
+  <div class="row ">
+    <div class="col-md-12 align-self-end">
+      <a href="/listarmarca" class="btn btn-primary">Cadastrar nova marca</a>
+    </div>
     <div class="col-md-4">
-      <app-novo-caminhao [caminhao]="caminhao" [acao]="acao"></app-novo-caminhao>
+      <app-novo-caminhao [caminhao]="caminhao"></app-novo-caminhao>
     </div>
     <div class=" col-md-8" style="margin-top: 20px">
       <table class="table table-striped">
