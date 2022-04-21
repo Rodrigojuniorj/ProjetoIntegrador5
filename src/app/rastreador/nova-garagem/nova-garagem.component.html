@@ -1,0 +1,26 @@
+<br>
+<h2>Gerenciar Caminhão</h2>
+<form #cadastro="ngForm" name="zeraCampos" (submit)="incluirGaragem()">
+  <div class="row">
+    <div class="col-md-4">
+      <label for="caminhoneiro">Caminhoneiro:</label><br>
+      <select [(ngModel)]="garagem.caminhoneiro.cpf" class="form-select" name="caminhoneiro" id="caminhoneiro">
+        <option *ngFor="let caminhoneiro of listaCaminhoneiro" value={{caminhoneiro.cpf}}>
+          {{caminhoneiro.nome + ' - ' + caminhoneiro.cpf}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="caminhao">Caminhao:</label><br>
+      <select [(ngModel)]="garagem.caminhao.placa" class="form-select" name="caminhao" id="caminhao">
+        <option *ngFor="let caminhao of listaCaminhao" value={{caminhao.placa}}>
+          {{caminhao.modelo + ' - ' + caminhao.placa}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-4" style="margin-top: 23px;">
+      <button type="submit" class="btn btn-primary form-control">Confirmar</button>
+    </div>
+  </div>
+</form>
+<br>

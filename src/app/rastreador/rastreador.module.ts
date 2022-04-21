@@ -7,6 +7,8 @@ import { NovaMarcaComponent } from './nova-marca/nova-marca.component';
 import { ListarMarcaComponent } from './listar-marca/listar-marca.component';
 import { NovoCaminhoneiroComponent } from './novo-caminhoneiro/novo-caminhoneiro.component';
 import { ListagemCaminhoneiroComponent } from './listagem-caminhoneiro/listagem-caminhoneiro.component';
+import { NovaGaragemComponent } from './nova-garagem/nova-garagem.component';
+import { ListagemGaragemComponent } from './listagem-garagem/listagem-garagem.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { ListagemCaminhoneiroComponent } from './listagem-caminhoneiro/listagem-
     ListarMarcaComponent,
     NovoCaminhoneiroComponent,
     ListagemCaminhoneiroComponent,
+    NovaGaragemComponent,
+    ListagemGaragemComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +34,8 @@ import { ListagemCaminhoneiroComponent } from './listagem-caminhoneiro/listagem-
     ListarMarcaComponent,
     NovoCaminhoneiroComponent,
     ListagemCaminhoneiroComponent,
+    ListagemGaragemComponent,
+    NovaGaragemComponent,
   ]
 })
 export class RastreadorModule { }

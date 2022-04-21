@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-md-12">
+      <app-nova-garagem [garagem]="garagem"></app-nova-garagem>
+    </div>
+    <div class=" col-md-12" style="margin-top: 20px">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>CAMINHONEIRO CPF:</th>
+            <th>CAMINHÃO PLACA:</th>
+            <th class="text-center"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let garagem of listaGaragem">
+            <td>
+              {{garagem.caminhoneiro.cpf}}
+            </td>
+            <td>
+              {{garagem.caminhao.placa}}
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-md-4">
+                  <button class="btn btn-sm btn-success" (click)="editarGaragem(garagem)">Alterar</button>
+                </div>
+                <div class="col-md-4" style="margin-left: 15px;">
+                  <button class="btn btn-sm btn-danger" (click)="excluirGaragem(garagem)">Remover</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

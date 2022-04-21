@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+
   conta = '';
   add = 0;
   $('.header_toggle').on('click', function(e){
