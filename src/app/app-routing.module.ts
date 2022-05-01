@@ -4,6 +4,7 @@ import { ListagemCaminhaoComponent } from './rastreador/listagem-caminhao/listag
 import { ListarMarcaComponent } from './rastreador/listar-marca/listar-marca.component';
 import { ListagemCaminhoneiroComponent } from './rastreador/listagem-caminhoneiro/listagem-caminhoneiro.component';
 import { ListagemGaragemComponent } from './rastreador/listagem-garagem/listagem-garagem.component';
+import { RastreioComponent } from './rastreador/rastreio/rastreio.component';
 
 const routes: Routes = [
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'listarmarca', component: ListarMarcaComponent },
   { path: 'listagemcaminhoneiro', component: ListagemCaminhoneiroComponent },
   { path: 'listagemgaragem', component: ListagemGaragemComponent },
+  { path: 'rastreio', component: RastreioComponent },
   { path: '', redirectTo: 'listagemcaminhao', pathMatch: 'full'},
 
 ];

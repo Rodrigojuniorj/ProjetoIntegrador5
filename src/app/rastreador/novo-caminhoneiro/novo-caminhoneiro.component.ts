@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Caminhoneiro } from '../model/caminhoneiro';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
-
 @Component({
   selector: 'app-novo-caminhoneiro',
   templateUrl: './novo-caminhoneiro.component.html',

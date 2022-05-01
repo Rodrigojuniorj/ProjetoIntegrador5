@@ -1,3 +1,5 @@
+<script src="angular-input-masks-standalone.min.js"></script>
+
 <div class="row">
   <div class="col-md-12" style="margin-top: 20px;">
     <h2>Gerenciar Caminhoneiro</h2>
@@ -8,7 +10,7 @@
             <label for="nome">Nome Completo:</label><br>
             <input type="text" id="nome" name="nome" [(ngModel)]="caminhoneiro.nome" required class="form-control">  <br>
             <label for="celular">Celular:</label><br>
-            <input type="text" id="celular" name="celular" [(ngModel)]="caminhoneiro.celular" required class="form-control" >  <br>
+            <input type="text" id="celular" name="celular" [(ngModel)]="caminhoneiro.celular" required class="form-control" ui-br-phone-number-mask>  <br>
             <label for="senha">Senha:</label><br>
             <input type="password" id="senha" name="senha" [(ngModel)]="caminhoneiro.senha" required class="form-control">  <br>
         </div>

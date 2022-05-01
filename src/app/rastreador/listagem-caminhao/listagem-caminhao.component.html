@@ -3,10 +3,10 @@
     <div class="col-md-12 align-self-end">
       <a href="/listarmarca" class="btn btn-primary">Cadastrar nova marca</a>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-12">
       <app-novo-caminhao [caminhao]="caminhao"></app-novo-caminhao>
     </div>
-    <div class=" col-md-8" style="margin-top: 20px">
+    <div class=" col-md-12" style="margin-top: 20px">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -41,11 +41,14 @@
             </td>
             <td>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                   <button class="btn btn-sm btn-success" (click)="editarCaminhao(veiculo)">Alterar</button>
                 </div>
-                <div class="col-md-4" style="margin-left: 15px;">
+                <div class="col-md-2" style="margin-left: 15px;">
                   <button class="btn btn-sm btn-danger" (click)="excluirCaminhao(veiculo)">Remover</button>
+                </div>
+                <div class="col-md-2" style="margin-left: 15px;">
+                  <button class="btn btn-sm btn-primary" (click)="localizarCaminhao(veiculo)">Localizar</button>
                 </div>
               </div>
             </td>

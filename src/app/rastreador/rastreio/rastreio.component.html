@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class=" col-md-12" style="margin-top: 20px">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>CAMINHONEIRO CPF:</th>
+            <th>CAMINHÃO PLACA:</th>
+            <th class="text-center"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let garagem of listaGaragem">
+            <td>
+              {{garagem.caminhoneiro.cpf}}
+            </td>
+            <td>
+              {{garagem.caminhao.placa}}
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-md-4">
+                  <button class="btn btn-sm btn-success" (click)="localizarCaminhao(garagem)">Alterar</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

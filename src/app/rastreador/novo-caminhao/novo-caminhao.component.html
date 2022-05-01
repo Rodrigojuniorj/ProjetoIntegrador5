@@ -1,26 +1,31 @@
 <br>
 <h2>Gerenciar Caminhão</h2>
 <form #cadastro="ngForm" name="zeraCampos" (submit)="incluirCaminhao()">
-  <div>
-    <label for="modelo">Modelo do Caminhão:</label><br>
-    <input type="text" id="modelo" name="modelo" [(ngModel)]="caminhao.modelo" required class="form-control"> <br>
-    <label for="anoFabricacao">Ano de fabricação:</label><br>
-    <input type="text" id="anoFabricacao" name="anoFabricacao" [(ngModel)]="caminhao.anoFabricacao" required
-      class="form-control"> <br>
-    <label for="placa">Placa:</label><br>
-    <input type="text" id="placa" name="placa" [(ngModel)]="caminhao.placa" required class="form-control"> <br>
-    <label for="chassi">Chassi:</label><br>
-    <input type="text" id="chassi" name="chassi" [(ngModel)]="caminhao.chassi" required class="form-control"> <br>
-    <label for="renavam">Renavam:</label><br>
-    <input type="text" id="renavam" name="renavam" [(ngModel)]="caminhao.renavam" required class="form-control"> <br>
-    <label for="marca">Marca:</label><br>
-    <select [(ngModel)]="caminhao.marca.marca" class="form-control" name="marca" id="marca">
-      <option *ngFor="let fabricante of listaFabricante" value={{fabricante.marca}}>
-        {{fabricante.marca}}
-      </option>
-    </select>
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" id="modelo" name="modelo" [(ngModel)]="caminhao.modelo" placeholder="Modelo do Caminhão:" required class="form-control"> <br>
+    </div>
+    <div class="col-md-4">
+      <input type="text" id="anoFabricacao" name="anoFabricacao" placeholder="Ano de fabricação:" [(ngModel)]="caminhao.anoFabricacao" required class="form-control"> <br>
+    </div>
+    <div class="col-md-4">
+      <input type="text" id="placa" name="placa" placeholder="Placa" [(ngModel)]="caminhao.placa" required class="form-control"> <br>
+    </div>
+    <div class="col-md-4">
+      <input type="text" id="chassi" name="chassi" placeholder="Chassi" [(ngModel)]="caminhao.chassi" required class="form-control"> <br>
+    </div>
+    <div class="col-md-4">
+      <input type="text" id="renavam" name="renavam" placeholder="Renavam" [(ngModel)]="caminhao.renavam" required class="form-control"> <br>
+    </div>
+    <div class="col-md-4">
+      <select  [(ngModel)]="caminhao.marca.marca" class="form-control" name="marca" id="marca">
+        <option *ngFor="let fabricante of listaFabricante" value={{fabricante.marca}}>
+          {{fabricante.marca}}
+        </option>
+      </select>
+    </div>
   </div>
-  <div class="col-md-12" style="margin-top: 30px;">
+  <div class="col-md-4" style="margin-top: 30px;">
     <button type="submit" class="btn btn-primary form-control">Confirmar</button>
   </div>
 </form>

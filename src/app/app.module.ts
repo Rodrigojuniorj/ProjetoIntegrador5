@@ -11,6 +11,10 @@ import { AngularFireModule } from '@angular/fire/';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 
+// maps
+import { AgmCoreModule } from '@agm/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { environment } from 'src/environments/environment';
     NgbModule,
     RastreadorModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAcSRIM9ex0_tw7iagO_UzfHeQPsK0ifpY',
+      libraries: ['places']
+    })
   ],
   exports: [
     RastreadorModule,
