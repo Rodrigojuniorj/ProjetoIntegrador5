@@ -4,15 +4,15 @@
     <a href="/listagemcaminhao" class="btn btn-primary">Cadastrar Novo Caminhão</a>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
       <app-nova-marca [fabricante]="fabricante"></app-nova-marca>
     </div>
-    <div class="col-md-8" style="margin-top: 20px">
+    <div class="col-md-12" style="margin-top: 20px">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Marca</th>
-            <th class="text-center"> </th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -24,9 +24,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <button class="btn btn-sm btn-success" (click)="editarMarca(fabricante)">Alterar</button>
-                  </div>
-                  <div class="col-md-4" style="margin-left: 15px;">
-                    <button class="btn btn-sm btn-danger" (click)="excluirFabricante(fabricante)">Remover</button>
+                    <button style="margin-left: 20px;" class="btn btn-sm btn-danger" (click)="excluirFabricante(fabricante)">Remover</button>
                   </div>
                 </div>
               </td>

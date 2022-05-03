@@ -2,11 +2,15 @@
       <div class="col-md-12" style="margin-top: 20px;">
         <h2>Gerenciar Marca</h2>
         <form #cadastro="ngForm" (submit)="incluirMarca()">
-            <div>
-                <label for="marca">Marca:</label><br>
-                <input type="text" id="marca" name="marca" [(ngModel)]="fabricante.marca" required class="form-control">  <br>
+            <div class="row">
+                <div class="col-md-6">
+                  <label for="marca">Marca:</label><br>
+                  <input type="text" id="marca" name="marca" [(ngModel)]="fabricante.marca" required class="form-control">  <br>
+                </div>
+                <div class="col-md-6">
+                  <button style="margin-top: 24px;" type="submit" class="btn btn-primary form-control" >Confirmar</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary form-control" >Confirmar</button>
         </form>
 
       </div>

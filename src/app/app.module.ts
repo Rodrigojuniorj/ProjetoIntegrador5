@@ -26,10 +26,7 @@ import { AgmCoreModule } from '@agm/core';
     RastreadorModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAcSRIM9ex0_tw7iagO_UzfHeQPsK0ifpY',
-      libraries: ['places']
-    })
+
   ],
   exports: [
     RastreadorModule,

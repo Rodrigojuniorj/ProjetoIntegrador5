@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListagemCaminhaoComponent } from './rastreador/listagem-caminhao/listagem-caminhao.component';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(public caminhao: ListagemCaminhaoComponent){
+
+  }
   title = 'ProjetoIntegrador5';
 
-  lat = 37.13141;
-  long = -121.8811667;
-  zoom = 15;
+
+
 }

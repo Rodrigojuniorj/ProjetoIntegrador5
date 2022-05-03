@@ -1,9 +1,8 @@
 import { Fabricante } from './../model/fabricante';
 import { Caminhao } from './../model/caminhao';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Injectable } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { observable, map } from 'rxjs';
-
 
 @Component({
   selector: 'app-listagem-caminhao',
@@ -11,11 +10,14 @@ import { observable, map } from 'rxjs';
   styleUrls: ['./listagem-caminhao.component.css']
 })
 
+@Injectable({ providedIn: 'root' })
 export class ListagemCaminhaoComponent implements OnInit {
   caminhao: any;
 
-  @Input()
-  coordenada: any;
+  lat:any;
+  long:any;
+  zoom:any;
+
   listaFabricante: any;
   listaCaminhao: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
@@ -40,9 +42,14 @@ export class ListagemCaminhaoComponent implements OnInit {
   }
 
   localizarCaminhao(caminhones: any): void {
-    this.coordenada = caminhones.coordenada
-    // this.banco.object('/caminhao/' + caminhones.placa);
+
+    this.lat = Number(caminhones.coordenada.split(',')[0]);
+    this.long = Number(caminhones.coordenada.split(',')[1]);
+    this.zoom = 15;
+
   }
+
+
   iniciarArrayTarefas(): void {
     this.referenceTableCaminhao.snapshotChanges().pipe(
       map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))

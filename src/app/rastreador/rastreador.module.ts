@@ -10,6 +10,7 @@ import { ListagemCaminhoneiroComponent } from './listagem-caminhoneiro/listagem-
 import { NovaGaragemComponent } from './nova-garagem/nova-garagem.component';
 import { ListagemGaragemComponent } from './listagem-garagem/listagem-garagem.component';
 import { RastreioComponent } from './rastreio/rastreio.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -27,7 +28,11 @@ import { RastreioComponent } from './rastreio/rastreio.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAcSRIM9ex0_tw7iagO_UzfHeQPsK0ifpY',
+      libraries: ['places']
+    })
   ],
   exports: [
     ListagemCaminhaoComponent,
