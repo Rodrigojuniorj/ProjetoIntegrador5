@@ -17,7 +17,8 @@ export class ListagemCaminhaoComponent implements OnInit {
   lat:any;
   long:any;
   zoom:any;
-
+  fabricante: any;
+  stringButton: any;
   listaFabricante: any;
   listaCaminhao: any;
   referenceTableCaminhao: AngularFireList<Caminhao>;
@@ -42,11 +43,19 @@ export class ListagemCaminhaoComponent implements OnInit {
   }
 
   localizarCaminhao(caminhones: any): void {
-
     this.lat = Number(caminhones.coordenada.split(',')[0]);
     this.long = Number(caminhones.coordenada.split(',')[1]);
     this.zoom = 15;
+  }
 
+  trancarCaminhao(caminhones: any): void {
+    if(caminhones['trancado'] == 0){
+      caminhones['trancado'] = 1;
+
+    }else{
+      caminhones['trancado'] = 0;
+    }
+    this.banco.object('/caminhao/' + caminhones.key).update(caminhones)
   }
 
 

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row ">
-    <div class="col-md-12 align-self-end">
+    <div class="col-md-12" style="margin-top: 20px;">
       <a href="/listarmarca" class="btn btn-primary">Cadastrar nova marca</a>
     </div>
     <div class="col-md-12">
@@ -19,7 +19,7 @@
             <th class="text-center"> </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="row-fluid">
           <tr *ngFor="let veiculo of listaCaminhao">
             <td>
               {{veiculo.modelo}}
@@ -50,6 +50,9 @@
                 <div class="col-md-2" style="margin-left: 15px;">
                   <button class="btn btn-sm btn-primary" (click)="localizarCaminhao(veiculo)">Localizar</button>
                 </div>
+                <div class="col-md-2" style="margin-left: 15px;">
+                  <button class="btn btn-sm {{veiculo.trancado == 0 ? 'btn-success' : 'btn-danger'}}" (click)="trancarCaminhao(veiculo)" >{{veiculo.trancado == 0 ? 'Destrancado' : 'Trancado'}}</button>
+                </div>
               </div>
             </td>
           </tr>
@@ -57,9 +60,10 @@
       </table>
     </div>
   </div>
-</div>
+  <div style="margin-top: 30px;"></div>
+  <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="long">
+    <agm-marker  [latitude]="lat"  [longitude]="long"></agm-marker>
+  </agm-map>
+  <div class="espacamento"></div>
 
-<agm-map [latitude]="lat" [zoom]="zoom" [longitude]="long">
-  <agm-marker  [latitude]="lat"  [longitude]="long"></agm-marker>
-</agm-map>
-<div class="espacamento"></div>
+</div>

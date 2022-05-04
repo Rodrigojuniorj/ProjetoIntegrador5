@@ -42,7 +42,7 @@ export class NovaGaragemComponent implements OnInit {
     this.iniciarArrayCaminhoneiro();
     this.iniciarArrayFabricante();
     this.fabricante = new Fabricante('');
-    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
+    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "", "");
     this.caminhoneiro = new Caminhoneiro("","","","")
     this.garagem = new Garagem(this.caminhoneiro, this.caminhao)
   }
@@ -78,12 +78,12 @@ export class NovaGaragemComponent implements OnInit {
           console.log(resultado.key);
         })
       this.fabricante = new Fabricante('');
-      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "", "");
       this.caminhoneiro = new Caminhoneiro("","","","")
       this.garagem = new Garagem(this.caminhoneiro, this.caminhao)
     } else {
       this.banco.object('/garagem/' + this.garagem.key).update(this.garagem)
-      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "", "");
       this.fabricante = new Fabricante('');
       this.caminhoneiro = new Caminhoneiro("","","","")
       this.garagem = new Garagem(this.caminhoneiro, this.caminhao)

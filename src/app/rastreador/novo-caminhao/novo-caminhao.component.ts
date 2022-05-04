@@ -26,7 +26,7 @@ export class NovoCaminhaoComponent implements OnInit {
   ngOnInit(): void {
     this.iniciarArrayFabricante();
     this.fabricante = new Fabricante('');
-    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
+    this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "", "");
   }
 
   iniciarArrayFabricante(): void {
@@ -39,15 +39,16 @@ export class NovoCaminhaoComponent implements OnInit {
 
   incluirCaminhao(): void {
     if (!this.caminhao.key){
+      this.caminhao['trancado'] = 0;
       this.banco.list('caminhao').push(this.caminhao)
         .then((resultado: any) => {
           console.log(resultado.key);
         })
       this.fabricante = new Fabricante('');
-      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "", "");
     } else {
       this.banco.object('/caminhao/' + this.caminhao.key).update(this.caminhao)
-      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "");
+      this.caminhao = new Caminhao("", "", "", "", "", this.fabricante, "", "");
       this.fabricante = new Fabricante('');
     }
     //console.log(this.caminhao.key);
