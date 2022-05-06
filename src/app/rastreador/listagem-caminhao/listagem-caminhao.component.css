@@ -6,4 +6,20 @@ agm-map {
   margin-top: 100px;
 }
 
+button{
+  min-width: 100px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
 
+.left__table{
+  margin-left: 20px;
+}
+
+.alinha__left{
+  margin-left: 50px;
+}
+
+.btn-amarelo{
+  background-color: rgb(235, 170, 6);
+}

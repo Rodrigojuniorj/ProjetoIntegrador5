@@ -35,6 +35,11 @@ export class ListagemCaminhaoComponent implements OnInit {
   }
 
   editarCaminhao(caminhao: any) {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
     this.caminhao = Object.assign({}, caminhao);
   }
 
@@ -46,6 +51,9 @@ export class ListagemCaminhaoComponent implements OnInit {
     this.lat = Number(caminhones.coordenada.split(',')[0]);
     this.long = Number(caminhones.coordenada.split(',')[1]);
     this.zoom = 15;
+    setTimeout(() => {
+        document.getElementById('click'+caminhones.placa)?.click()
+    }, 4000)
   }
 
   trancarCaminhao(caminhones: any): void {
